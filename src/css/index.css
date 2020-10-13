@@ -1,0 +1,50 @@
+:root {
+	--processing-color: #F1CCB1;
+	--structure-color: #B1D095;
+	--properties-color: #B8C7E4;
+	--performance-color: #B8A0E9;
+}
+/*Note: these colors are reset in starter.js under the assumption that eventually this all can be read in from a file*/
+
+
+html,body {
+	font: 12px sans-serif;
+	font-family: sans-serif;
+	padding:0;
+	margin:0;
+	background-color : var(--background-color);
+	overflow: auto;
+	color: var(--foreground-color);
+	/*height:100%;*/
+}
+
+.title{
+	font-size:3vw;
+	padding:2px;
+	text-align:center;
+	margin-bottom:4vh;
+	margin-top:1vh;
+}
+
+
+.columnLeft{
+	position: relative;
+	float: left;
+	width:45%;
+}
+
+.columnRight{
+	position: relative;
+	float: left;
+	width:55%;
+}
+.iForm{
+	margin:1vw;
+}
+.para{
+	margin:1vw;
+	font-size:1.5vw;
+	text-align: justify;
+	text-justify: inter-word;
+	display: inline-block;
+}
