@@ -1,6 +1,6 @@
 //attach listener on window resize and run it once to start
 window.addEventListener("resize", resizer);
-setTimeout(function(){ resizer();; }, 500); //hack to try to allow time for the image to load (could do this more robustly but that seems more complicated than necessary)
+setTimeout(function(){ resizer(); }, 500); //hack to try to allow time for the image to load (could do this more robustly but that seems more complicated than necessary)
 
 function resizer(){
 	var lim = 0.1*window.innerHeight; //pixel limit to allow
