@@ -1,8 +1,26 @@
 //attach listener on window resize and run it once to start
 window.addEventListener("resize", resizer);
-setTimeout(function(){ resizer(); }, 500); //hack to try to allow time for the image to load (could do this more robustly but that seems more complicated than necessary)
+resizer(); //hack to try to allow time for the image to load (could do this more robustly but that seems more complicated than necessary)
 
 function resizer(){
+
+	//resize the image if necessary
+	var img = document.getElementById('paraImage')
+	var hnow = img.getBoundingClientRect().height;
+	var wnow = img.getBoundingClientRect().width;
+	var aspect = 1080/1620;  //I'd rather not hard code this in, but it appears like I need to for this method to work
+	var w = 0.44*window.innerWidth; //again, I'd rather not hardcode this (since it's in the style sheet), but it seems necessary
+	var h = w*aspect;
+	if (h > window.innerHeight*0.4){
+		w = Math.min(0.4*window.innerHeight/aspect, 0.44*window.innerWidth);
+		h = w*aspect;
+	}
+	img.height = h;
+	img.width = w;
+	img.style.paddingLeft = (document.getElementById('paraColumn').getBoundingClientRect().width -  w)/2. + "px";
+
+
+	//resize the paragraph
 	var lim = 0.1*window.innerHeight; //pixel limit to allow
 	var nLim = 50; //limit the number of iterations for text resizing
 
