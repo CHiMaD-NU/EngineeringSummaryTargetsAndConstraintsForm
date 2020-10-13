@@ -3,7 +3,6 @@ window.addEventListener("resize", resizer);
 setTimeout(function(){ resizer();; }, 500); //hack to try to allow time for the image to load (could do this more robustly but that seems more complicated than necessary)
 
 function resizer(){
-	console.log('resizing')
 	var lim = 0.1*window.innerHeight; //pixel limit to allow
 	var nLim = 50; //limit the number of iterations for text resizing
 
