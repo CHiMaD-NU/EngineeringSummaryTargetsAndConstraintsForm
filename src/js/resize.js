@@ -8,7 +8,7 @@ function resizer(){
 	var img = document.getElementById('paraImage')
 	var hnow = img.getBoundingClientRect().height;
 	var wnow = img.getBoundingClientRect().width;
-	var aspect = 1080/1620;  //I'd rather not hard code this in, but it appears like I need to for this method to work
+	var aspect = img.naturalHeight/img.naturalWidth;  
 	var w = 0.44*window.innerWidth; //again, I'd rather not hardcode this (since it's in the style sheet), but it seems necessary
 	var h = w*aspect;
 	if (h > window.innerHeight*0.4){
